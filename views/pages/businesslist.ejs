@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <h3>Business List</h3>
+    <section>          
+         <table >
+            <thead>
+                <tr>
+                    <th style="padding: 4px;"> contact_name </th>
+                    <th style="padding: 4px;"> contact_number </th>
+                    <th style="padding: 4px;"> email_address </th>
+                    <th style="padding: 4px;"> Update/Delete </th>  
+                  </tr>
+            </thead>
+            <tbody>
+                <% businesslists.forEach(function(business){ %>
+                    <tr>
+                        <td ><%- business.contact_name %></td>
+                        <td><%- business.contact_number %></td>
+                        <td><%- business.email_address %></td>
+                        <td><a href="/businesslist/<%- business._id %>" style="padding: 4px;"><button>Update</button></a><a href="/businesslist/delete/<%- business._id %>" style="padding: 4px;"><button>Delete</button></a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>    
+     </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

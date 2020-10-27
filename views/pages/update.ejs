@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <section>
+        <form action="/businesslist/<%- business._id %>" method="post"> 
+            <h2>Business List</h2>
+            Contact_name: <input type="text" name="contact_name" value="<%- business.contact_name %>"><br>
+            Contact_number: <input type="text" name="contact_number" value="<%- business.contact_number %>"><br><br>
+            Email_address: <input type="text" name="email_address" value="<%- business.email_address %>"><br><br>
+            
+            <button type="submit">Update</button> 
+            
+            <a href="/businesslist"><button>Cancel</button></a>
+        </form><br>
+    </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

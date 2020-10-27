@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <section>
+        <form action="/user/signup" method="POST"> <br>
+            Username: <input type="text" name="username"><br><br>
+            Email: <input type="text" name="email" ><br><br>
+            Password: <input type="password" name="password" ><br><br>
+            <button>Sign Up</button> 
+       </form><br>
+    </section>        
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+</body>
+</html>
