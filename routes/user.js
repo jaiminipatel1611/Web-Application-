@@ -131,7 +131,6 @@ router.post(
         (err, token) => {
           if (err) throw err;
           res.redirect('/businesslist');
-      
         }
       );
     } catch (e) {
@@ -142,8 +141,6 @@ router.post(
     }
   }
 );
-
-
 
 router.get("/me", auth, async (req, res) => {
   try {

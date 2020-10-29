@@ -23,22 +23,16 @@ connection.once("open", () => {
 
 app.set('view engine', 'ejs');
 
-
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/images', express.static(__dirname + 'public/images'))
 app.use('/fonts', express.static(__dirname + 'public/fonts'))
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 
 app.use("/user", user);
 
-
-//businesslist
 app.get('/businesslist', async function (req, res) {
 
     try {
@@ -49,8 +43,6 @@ app.get('/businesslist', async function (req, res) {
     } catch (error) {
         console.log({ error })
     }
-    
-
 });
 
 // Update
@@ -68,9 +60,7 @@ app.post('/businesslist/:id', async function (req, res) {
     } catch (error) {
         console.log({ error })
     }
-
 });
-
 
 app.post('/businesslist', async function (req, res) {
 
@@ -87,9 +77,7 @@ app.post('/businesslist', async function (req, res) {
         console.log({ error })
     }
     res.render('pages/home');
-
 });
-
 
 app.get('/businesslist/:id', async function (req, res) {
 
@@ -100,12 +88,8 @@ app.get('/businesslist/:id', async function (req, res) {
     } catch (error) {
         console.log({ error })
     }
-    
-
 });
 
-
-// Delete
 app.get('/businesslist/delete/:id', async function (req, res) {
 
     try {
@@ -116,9 +100,7 @@ app.get('/businesslist/delete/:id', async function (req, res) {
         console.log({ error })
     }
     res.redirect('/businesslist');
-
 });
-
 
 // home page
 app.get('/home', function(req, res) {
